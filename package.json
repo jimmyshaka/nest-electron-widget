@@ -1,0 +1,11 @@
+{
+  "name": "nest-electron-widget",
+  "version": "0.0.0",
+  "description": "An electron wrapper for https://home.nest.com to make your life easier",
+  "main": "index.js",
+  "author": "James Walsh <jamesandersonwalsh@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "2.0.5"
+  }
+}
