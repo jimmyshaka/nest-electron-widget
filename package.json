@@ -2,10 +2,17 @@
   "name": "nest-electron-widget",
   "version": "0.0.0",
   "description": "An electron wrapper for https://home.nest.com to make your life easier",
-  "main": "index.js",
   "author": "James Walsh <jamesandersonwalsh@gmail.com>",
   "license": "MIT",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron ./src/index.js",
+    "start:dev": "NODE_ENV=development electron ./src/index"
+  },
   "devDependencies": {
     "electron": "2.0.5"
+  },
+  "dependencies": {
+    "dotenv": "6.0.0"
   }
 }
