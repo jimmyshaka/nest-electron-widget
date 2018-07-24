@@ -1,24 +1,28 @@
 const config = require('dotenv').config()
-const { app, BrowserWindow } = require('electron')
+const menubar = require('menubar')
+const path = require('path')
 
-const configUtil = require('./util/config')
+const { isDev, getConfigVariable } = require('./util/config')
 
-function createWindow () {
-  const mainWindow = getWindowEnvSettings()
-  console.log('mainWindow:', mainWindow)
-  const url = configUtil.getConfigVariable(config, 'nestThermostatUrl')
+const mb = menubar({
+  width: isDev() ? 840 : 425,
+  height: isDev() ? 800 : 657,
+  icon: path.join(__dirname, 'assets', 'logo.png')
+})
 
-  mainWindow.loadURL(url)
+function handleAppReady() {
+  console.log('ready!')
 }
 
-function getWindowEnvSettings() {
-  if (configUtil.isDev()) {
-    const window = new BrowserWindow({ width: 840, height: 800 })
-    window.openDevTools()
-    return window
-  } else {
-    return new BrowserWindow({ width: 425, height: 657 })
-  }
+function handleAfterCreateWindow() {
+  if (isDev())
+    mb.window.openDevTools()
+
+  console.log('mb.window:', mb.window)
+  console.log('mb.window.loadUrl:', mb.window.loadUrl)
+
+  mb.window.loadURL(getConfigVariable(config, 'nestThermostatUrl'))
 }
-  
-app.on('ready', createWindow)
+
+mb.on('ready', handleAppReady)
+mb.on('after-create-window', handleAfterCreateWindow)

@@ -10,7 +10,8 @@
     "start:dev": "NODE_ENV=development electron ./src/index"
   },
   "devDependencies": {
-    "electron": "2.0.5"
+    "electron": "2.0.5",
+    "menubar": "5.2.3"
   },
   "dependencies": {
     "dotenv": "6.0.0"
