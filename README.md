@@ -1,21 +1,18 @@
 # nest-electron-widget
-Tired of having to launch a new browser tab every time you want to change the temperature on your laptop?
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Description
-This electron widget adds a nice menu icon to your desktop so that you can easily access your nest home without having to keep a browser tab open. Please note that I am in no way affiliated with Nest.
+Tired of having to launch a new browser tab every time you want to check on your nest home? SAME.
+So instead here's a nice desktop tray item for nest so that you can easily access your home on the fly.
 
-## Usage
-```
-$: yarn && npm run start
-```
+_**(Please note that I am in no way affiliated with Nest or Google)**_
 
-## Development
+## Usage 🚀
 * Clone the repository and add a `.env` file to the root of the project directory.
 * You will need to add the url for your nest thermostat. See the `.env.example` for how to do that. This is the url that will be loaded on app startup.
-```
-$: npm run start:dev
+
+```sh
+$: yarn && npm run start:dev
 ```
 
-
-## License
-MIT
+## Issues & Questions
+Feel free to hit me up on [twitter](https://twitter.com/jameswalshtech)
