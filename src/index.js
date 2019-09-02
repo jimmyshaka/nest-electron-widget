@@ -1,18 +1,15 @@
-const config = require('dotenv').config()
 const menubar = require('menubar')
 const path = require('path')
 
-const { isDev, getConfigVariable } = require('./util/config')
+const { isDev } = require('./util/config')
+
+const NEST_URL = 'https://home.nest.com'
 
 const mb = menubar({
   width: isDev() ? 840 : 425,
   height: isDev() ? 800 : 657,
   icon: path.join(__dirname, 'assets', 'logo.png')
 })
-
-function handleAppReady() {
-  console.log('ready!')
-}
 
 function handleAfterCreateWindow() {
   if (isDev())
@@ -21,8 +18,7 @@ function handleAfterCreateWindow() {
   console.log('mb.window:', mb.window)
   console.log('mb.window.loadUrl:', mb.window.loadUrl)
 
-  mb.window.loadURL(getConfigVariable(config, 'nestThermostatUrl'))
+  mb.window.loadURL(NEST_URL)
 }
 
-mb.on('ready', handleAppReady)
 mb.on('after-create-window', handleAfterCreateWindow)
