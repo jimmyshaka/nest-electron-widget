@@ -1,7 +1,8 @@
 # nest-electron-widget
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> Deprecated. I've since moved away from Nest and into the HomeKit ecosystem.
+> ‼️ Deprecated. I've since moved away from Nest and into the HomeKit ecosystem.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Tired of having to launch a new browser tab every time you want to check on your nest home? SAME.
 So instead here's a nice desktop tray item for nest so that you can easily access your home on the fly.
